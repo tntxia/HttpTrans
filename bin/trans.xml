@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trans>
+	<trans-list>
+		<trans name="file_center">
+			<host>localhost</host>
+			<context-path>file_center</context-path>
+		</trans>
+	</trans-list>
+</trans>

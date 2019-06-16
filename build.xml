@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<project name="httptrans" default="deploy" basedir=".">
+	
+	<path id="compile.classpath">
+	    <fileset dir="lib">   
+	        <include name="*.jar"/>   
+	    </fileset>   
+	</path>
+	
+	<!-- 初始化创建文件夹   -->
+	<target name="init">
+		<mkdir dir="temp"/>
+		<mkdir dir="dist"/>
+	</target>
+	
+	<target name="compile"  depends="init">
+		<javac srcdir="src/java" destdir="temp" includeantruntime="on" encoding="UTF-8" debug="on">
+			<classpath refid="compile.classpath"></classpath>
+		</javac>
+	</target>
+	
+    <target name="deploy" depends="compile">
+    	<jar destfile="dist/httptrans.jar">
+    		<fileset dir="temp"></fileset>
+    	</jar>
+    	
+    </target>
+	
+</project>
